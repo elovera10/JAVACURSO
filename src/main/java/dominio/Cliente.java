@@ -17,6 +17,13 @@ public class Cliente {
     private DocumentoDigital[] dniDigitalizado;
     private Prestamo[] prestamos;
 
+    public void cambiarDomicilio (Domicilio newDomicilio){
+        
+    }
+    
+    public void actualizarIngresos(DocumentoDigital recibo,BigDecimal monto){
+    
+    }
     public String getDni() {
         return dni;
     }

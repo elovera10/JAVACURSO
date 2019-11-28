@@ -22,23 +22,30 @@ public class Prestamo {
         this.monto = monto;
         this.cantidadCuotas = cantidadCuotas;
     }
-    
-    public BigDecimal calculaTasa(int cuotas) {
-        //int m1 = P1.getMonto();
-        BigDecimal t1 = new BigDecimal(10);
-        BigDecimal t2 = new BigDecimal(20);
-        BigDecimal tasa1 = new BigDecimal("0");
+    public Boolean cancelarCuotas (int cantidad){
         
-        if (cuotas < 13){
-                    
-            tasa1 = new BigDecimal(10);
-        }
-        if (cuotas > 12){
-                    
-            tasa1 =new BigDecimal(20);
-        }
-        return tasa1;
-    }
+        Boolean cancelo = true;
+        return cancelo;
+    };
+    public void cancelarPrestamo (){
+        
+    };
+//    public BigDecimal calculaTasa(int cuotas) {
+//        //int m1 = P1.getMonto();
+//        BigDecimal t1 = new BigDecimal(10);
+//        BigDecimal t2 = new BigDecimal(20);
+//        BigDecimal tasa1 = new BigDecimal("0");
+//        
+//        if (cuotas < 13){
+//                    
+//            tasa1 = new BigDecimal(10);
+//        }
+//        if (cuotas > 12){
+//                    
+//            tasa1 =new BigDecimal(20);
+//        }
+//        return tasa1;
+//    }
     
     //public BigDecimal getMonto() {
     public int getMonto() {
