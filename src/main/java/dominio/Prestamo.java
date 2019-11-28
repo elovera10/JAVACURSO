@@ -11,14 +11,14 @@ import java.math.BigDecimal;
  */
 public class Prestamo {
     //private BigDecimal monto; 
-    private int monto; 
+    private BigDecimal monto; 
     private int plazoEnMeses;
     private int cantidadCuotas;
     private BigDecimal tasa;
     private DocumentoDigital[] documentoDigitales;
 
     //public Prestamo(BigDecimal monto, int cantidadCuotas) {
-    public Prestamo(int monto, int cantidadCuotas) {
+    public Prestamo(BigDecimal monto, int cantidadCuotas) {
         this.monto = monto;
         this.cantidadCuotas = cantidadCuotas;
     }
@@ -47,13 +47,13 @@ public class Prestamo {
 //        return tasa1;
 //    }
     
-    //public BigDecimal getMonto() {
-    public int getMonto() {
+    public BigDecimal getMonto() {
+    //public int getMonto() {
         return monto;
     }
 
-    //public void setMonto(BigDecimal monto) {
-    public void setMonto(int monto) {        
+    public void setMonto(BigDecimal monto) {
+    //public void setMonto(int monto) {        
         this.monto = monto;
     }
 
