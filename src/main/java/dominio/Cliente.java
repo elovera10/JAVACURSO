@@ -16,4 +16,53 @@ public class Cliente {
     private BigDecimal ingresos;    
     private DocumentoDigital[] dniDigitalizado;
     private Prestamo[] prestamos;
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombreApellido() {
+        return nombreApellido;
+    }
+
+    public void setNombreApellido(String nombreApellido) {
+        this.nombreApellido = nombreApellido;
+    }
+
+    public Domicilio[] getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio[] domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public BigDecimal getIngresos() {
+        return ingresos;
+    }
+
+    public void setIngresos(BigDecimal ingresos) {
+        this.ingresos = ingresos;
+    }
+
+    public DocumentoDigital[] getDniDigitalizado() {
+        return dniDigitalizado;
+    }
+
+    public void setDniDigitalizado(DocumentoDigital[] dniDigitalizado) {
+        this.dniDigitalizado = dniDigitalizado;
+    }
+
+    public Prestamo[] getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(Prestamo[] prestamos) {
+        this.prestamos = prestamos;
+    }
+    
 }
