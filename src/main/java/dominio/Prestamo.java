@@ -1,54 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
+
 import java.math.BigDecimal;
-/**
- *
- * @author lovera1290
- */
+
 public class Prestamo {
-    //private BigDecimal monto; 
     private BigDecimal monto; 
-    private int plazoEnMeses;
     private int cantidadCuotas;
     private BigDecimal tasa;
     private DocumentoDigital[] documentoDigitales;
 
-    //public Prestamo(BigDecimal monto, int cantidadCuotas) {
+   
+    public String toString(){
+        return "Monto: " + this.monto
+                + " // cantidad de cuotas: " + this.cantidadCuotas;    
+    
+    }
+
+//    public Prestamo(BigDecimal montoN) {
+//        System.out.println("MONTO NUEVO: " + montoN);
+//        this.monto = montoN;
+//    }
+    public Prestamo(){
+    }
     public Prestamo(BigDecimal monto, int cantidadCuotas) {
         this.monto = monto;
         this.cantidadCuotas = cantidadCuotas;
     }
-    public Boolean cancelarCuotas (int cantidad){
-        
-        Boolean cancelo = true;
-        return cancelo;
-    };
-    public void cancelarPrestamo (){
-        
-    };
-//    public BigDecimal calculaTasa(int cuotas) {
-//        //int m1 = P1.getMonto();
-//        BigDecimal t1 = new BigDecimal(10);
-//        BigDecimal t2 = new BigDecimal(20);
-//        BigDecimal tasa1 = new BigDecimal("0");
-//        
-//        if (cuotas < 13){
-//                    
-//            tasa1 = new BigDecimal(10);
-//        }
-//        if (cuotas > 12){
-//                    
-//            tasa1 =new BigDecimal(20);
-//        }
-//        return tasa1;
-//    }
+    //Prestamo p1 = new Prestamo(BigDecimal monto, int cantidadCuotas);
     
     public BigDecimal getMonto() {
-    //public int getMonto() {
+        //public int getMonto() {
         return monto;
     }
 
@@ -56,15 +36,6 @@ public class Prestamo {
     //public void setMonto(int monto) {        
         this.monto = monto;
     }
-
-    public int getPlazoEnMeses() {
-        return plazoEnMeses;
-    }
-
-    public void setPlazoEnMeses(int plazoEnMeses) {
-        this.plazoEnMeses = plazoEnMeses;
-    }
-
     public int getCantidadCuotas() {
         return cantidadCuotas;
     }
@@ -88,5 +59,14 @@ public class Prestamo {
     public void setDocumentoDigitales(DocumentoDigital[] documentoDigitales) {
         this.documentoDigitales = documentoDigitales;
     }
+//    public Boolean cancelarCuotas (int cantidad){
+//        
+//        Boolean cancelo = true;
+//        return cancelo;
+//    };
+//    public void cancelarPrestamo (){
+//        
+//    };   
+
    
 }

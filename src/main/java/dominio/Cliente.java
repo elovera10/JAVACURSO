@@ -10,13 +10,20 @@ import java.math.BigDecimal;
  * @author lovera1290
  */
 public class Cliente {
-    private String dni;
-    private String nombreApellido;
+    private DocumentoDigital[] dni;   
     private Domicilio[] domicilio;
     private BigDecimal ingresos;    
-    private DocumentoDigital[] dniDigitalizado;
+    //private DocumentoDigital[] dniDigitalizado;
     private Prestamo[] prestamos;
+    private String nombreApellido;
 
+    public Cliente (String nombreNuevo) {
+        System.out.println("CREACION DE CLIENTE: " + nombreNuevo);
+        this.nombreApellido = nombreNuevo;
+    }         
+    public String toString(){
+        return this.nombreApellido;
+    }
     public void cambiarDomicilio (Domicilio newDomicilio){
         
     }
@@ -24,21 +31,13 @@ public class Cliente {
     public void actualizarIngresos(DocumentoDigital recibo,BigDecimal monto){
     
     }
-    public String getDni() {
-        return dni;
-    }
+//    public String getNombreApellido() {
+//        return nombreApellido;
+//    }
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getNombreApellido() {
-        return nombreApellido;
-    }
-
-    public void setNombreApellido(String nombreApellido) {
-        this.nombreApellido = nombreApellido;
-    }
+//    public void setNombreApellido(String nombreApellido) {
+//        this.nombreApellido = nombreApellido;
+//    }
 
     public Domicilio[] getDomicilio() {
         return domicilio;
@@ -57,11 +56,11 @@ public class Cliente {
     }
 
     public DocumentoDigital[] getDniDigitalizado() {
-        return dniDigitalizado;
+        return dni;
     }
 
     public void setDniDigitalizado(DocumentoDigital[] dniDigitalizado) {
-        this.dniDigitalizado = dniDigitalizado;
+        this.dni = dniDigitalizado;
     }
 
     public Prestamo[] getPrestamos() {
