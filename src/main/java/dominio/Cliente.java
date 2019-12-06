@@ -24,6 +24,7 @@ public class Cliente {
     public String toString(){
         return this.nombreApellido;
     }
+    
     public void cambiarDomicilio (Domicilio newDomicilio){
         
     }

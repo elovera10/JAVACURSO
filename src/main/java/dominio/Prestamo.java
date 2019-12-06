@@ -3,6 +3,7 @@ package dominio;
 import java.math.BigDecimal;
 
 public class Prestamo {
+    private Banco banco;
     private BigDecimal monto; 
     private int cantidadCuotas;
     private BigDecimal tasa;
@@ -19,9 +20,10 @@ public class Prestamo {
 //        System.out.println("MONTO NUEVO: " + montoN);
 //        this.monto = montoN;
 //    }
-    public Prestamo(){
-    }
-    public Prestamo(BigDecimal monto, int cantidadCuotas) {
+//    public Prestamo(){
+//    }
+    public Prestamo(Banco banco, BigDecimal monto, int cantidadCuotas) {
+        this.banco = banco;
         this.monto = monto;
         this.cantidadCuotas = cantidadCuotas;
     }
@@ -40,9 +42,9 @@ public class Prestamo {
         return cantidadCuotas;
     }
 
-    public void setCantidadCuotas(int cantidadCuotas) {
-        this.cantidadCuotas = cantidadCuotas;
-    }
+//    public void setCantidadCuotas(int cantidadCuotas) {
+//        this.cantidadCuotas = cantidadCuotas;
+//    }
 
     public BigDecimal getTasa() {
         return tasa;
