@@ -9,8 +9,9 @@ import java.math.BigDecimal;
  *
  * @author lovera1290
  */
-public class Cliente {
-    private DocumentoDigital[] dni;   
+public class Cliente implements ImprimirDatos{
+    //private DocumentoDigital[] dni;   
+    private String dni;
     private Domicilio[] domicilio;
     private BigDecimal ingresos;    
     //private DocumentoDigital[] dniDigitalizado;
@@ -21,10 +22,19 @@ public class Cliente {
         System.out.println("CREACION DE CLIENTE: " + nombreNuevo);
         this.nombreApellido = nombreNuevo;
     }         
-    public String toString(){
-        return this.nombreApellido;
+    @Override
+    public String toString() {
+        return "Cliente{" + "dni=" + dni + ", domicilio=" + domicilio + ", ingresos=" + ingresos + ", prestamos=" + prestamos + ", nombre=" + nombreApellido + '}';
     }
-    
+    @Override
+    public void imprimirDatos() {
+        System.out.println("Impresión Cliente: "
+                + "DNI = " + dni + ", ingresos = " + ingresos
+                + ". Color de impresión: " + COLORSECUNDARIO);
+        for (Prestamo prestamo : prestamos) {
+            prestamo.imprimirDatos();
+        }
+    }
     public void cambiarDomicilio (Domicilio newDomicilio){
         
     }
@@ -55,14 +65,14 @@ public class Cliente {
     public void setIngresos(BigDecimal ingresos) {
         this.ingresos = ingresos;
     }
+    
+//    public DocumentoDigital[] getDniDigitalizado() {
+//        return dni;
+//    }
 
-    public DocumentoDigital[] getDniDigitalizado() {
-        return dni;
-    }
-
-    public void setDniDigitalizado(DocumentoDigital[] dniDigitalizado) {
-        this.dni = dniDigitalizado;
-    }
+//    public void setDniDigitalizado(DocumentoDigital[] dniDigitalizado) {
+//        this.dni = dniDigitalizado;
+//    }
 
     public Prestamo[] getPrestamos() {
         return prestamos;
@@ -70,6 +80,22 @@ public class Cliente {
 
     public void setPrestamos(Prestamo[] prestamos) {
         this.prestamos = prestamos;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombreApellido() {
+        return nombreApellido;
+    }
+
+    public void setNombreApellido(String nombreApellido) {
+        this.nombreApellido = nombreApellido;
     }
     
 }

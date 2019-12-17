@@ -1,8 +1,9 @@
 package dominio;
 
+import static dominio.ImprimirDatos.COLORDEFAULT;
 import java.math.BigDecimal;
 
-public class Prestamo {
+public abstract class Prestamo implements ImprimirDatos{
     private Banco banco;
     private BigDecimal monto; 
     private int cantidadCuotas;
@@ -10,6 +11,7 @@ public class Prestamo {
     private DocumentoDigital[] documentoDigitales;
 
    
+    @Override
     public String toString(){
         return "Monto: " + this.monto
                 + " // cantidad de cuotas: " + this.cantidadCuotas;    
@@ -28,7 +30,13 @@ public class Prestamo {
         this.cantidadCuotas = cantidadCuotas;
     }
     //Prestamo p1 = new Prestamo(BigDecimal monto, int cantidadCuotas);
-    
+     // Implementación del método imprimirDatos() declarado en la interfaz ImprimirDatos
+    public void imprimirDatos() {
+        System.out.println("Impresión Prestamo: "
+                + "monto del préstamo = " + monto
+                + ", cantidad de cuotas = " + cantidadCuotas
+                + ". Color de impresión: " + COLORDEFAULT);
+    };
     public BigDecimal getMonto() {
         //public int getMonto() {
         return monto;
