@@ -5,13 +5,17 @@
  */
 package dominio;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 /**
  *
  * @author lovera1290
  */
 public class Cliente implements ImprimirDatos{
-    //private DocumentoDigital[] dni;   
-    private String dni;
+    private DocumentoDigital dni;   
+    //private String dni;
     private Domicilio[] domicilio;
     private BigDecimal ingresos;    
     //private DocumentoDigital[] dniDigitalizado;
@@ -31,7 +35,10 @@ public class Cliente implements ImprimirDatos{
         System.out.println("Impresión Cliente: "
                 + "DNI = " + dni + ", ingresos = " + ingresos
                 + ". Color de impresión: " + COLORSECUNDARIO);
-        for (Prestamo prestamo : prestamos) {
+        List <Prestamo> listPrest = Arrays.asList(prestamos);
+        listPrest.sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
+        //for (Prestamo prestamo : prestamos) {
+        for (Prestamo prestamo : listPrest) {
             prestamo.imprimirDatos();
         }
     }
@@ -69,7 +76,7 @@ public class Cliente implements ImprimirDatos{
 //    public DocumentoDigital[] getDniDigitalizado() {
 //        return dni;
 //    }
-
+//
 //    public void setDniDigitalizado(DocumentoDigital[] dniDigitalizado) {
 //        this.dni = dniDigitalizado;
 //    }
@@ -82,11 +89,11 @@ public class Cliente implements ImprimirDatos{
         this.prestamos = prestamos;
     }
 
-    public String getDni() {
+    public DocumentoDigital getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(DocumentoDigital dni) {
         this.dni = dni;
     }
 

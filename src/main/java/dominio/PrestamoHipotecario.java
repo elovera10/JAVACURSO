@@ -15,8 +15,9 @@ public class PrestamoHipotecario extends Prestamo {
 
     private String garantia;
 
-    public PrestamoHipotecario(Banco banco, BigDecimal monto, Integer cantidadCuotas) {
+    public PrestamoHipotecario(Banco banco, BigDecimal monto, Integer cantidadCuotas,String garantia) {
         super(banco, monto, cantidadCuotas);
+        this.garantia = garantia;
     }
 
     public String getGarantia() {
@@ -29,6 +30,9 @@ public class PrestamoHipotecario extends Prestamo {
     @Override
     public void imprimirDatos() {
         System.out.println("Impresión Préstamo Hipotecario");
+        System.out.println("Fecha de Acreditacion: " + getFechaAcreditacion());
+        System.out.println("Monto del Prestamo: " + getMonto());
+        System.out.println("Cantidad de Cuotas: " + getCantidadCuotas());
         System.out.println("Garantia: " + garantia);
     };
 }

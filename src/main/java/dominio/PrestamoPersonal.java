@@ -15,7 +15,7 @@ public class PrestamoPersonal extends Prestamo {
     
     private String situacionVeraz;
     
-    public PrestamoPersonal(Banco banco, BigDecimal monto, int cantidadCuotas) {
+    public PrestamoPersonal(Banco banco, BigDecimal monto, int cantidadCuotas, String situacionVeraz) {
         super(banco, monto, cantidadCuotas);
     }
     
@@ -25,5 +25,13 @@ public class PrestamoPersonal extends Prestamo {
 
     public void setSituacionVeraz(String situacionVeraz) {
         this.situacionVeraz = situacionVeraz;
+    }
+    @Override
+    public String toString() {
+        return "PrestamoPersonal{" + "Situacion Veraz: " + situacionVeraz + '}';
     }    
+
+    void setFechaAcreditacion(int i, int i0, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

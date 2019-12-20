@@ -2,6 +2,7 @@ package dominio;
 
 import static dominio.ImprimirDatos.COLORDEFAULT;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public abstract class Prestamo implements ImprimirDatos{
     private Banco banco;
@@ -9,6 +10,25 @@ public abstract class Prestamo implements ImprimirDatos{
     private int cantidadCuotas;
     private BigDecimal tasa;
     private DocumentoDigital[] documentoDigitales;
+    private String estado;
+    private LocalDate fechaAdjudicacion;
+    private LocalDate fechaAcreditacion;
+
+    public LocalDate getFechaAdjudicacion() {
+        return fechaAdjudicacion;
+    }
+
+    public void setFechaAdjudicacion(LocalDate fechaAdjudicacion) {
+        this.fechaAdjudicacion = fechaAdjudicacion;
+    }
+
+    public LocalDate getFechaAcreditacion() {
+        return fechaAcreditacion;
+    }
+
+    public void setFechaAcreditacion(LocalDate fechaAcreditacion) {
+        this.fechaAcreditacion = fechaAcreditacion;
+    }
 
    
     @Override
@@ -35,7 +55,8 @@ public abstract class Prestamo implements ImprimirDatos{
         System.out.println("Impresión Prestamo: "
                 + "monto del préstamo = " + monto
                 + ", cantidad de cuotas = " + cantidadCuotas
-                + ". Color de impresión: " + COLORDEFAULT);
+                + ". Color de impresión: " + COLORDEFAULT
+                + ", Fecha Acreditacion: " + fechaAcreditacion);
     };
     public BigDecimal getMonto() {
         //public int getMonto() {
@@ -53,7 +74,9 @@ public abstract class Prestamo implements ImprimirDatos{
 //    public void setCantidadCuotas(int cantidadCuotas) {
 //        this.cantidadCuotas = cantidadCuotas;
 //    }
-
+    private void setCantidadCuotas(Integer cantidadCuotas) {
+        this.cantidadCuotas = cantidadCuotas;
+    }
     public BigDecimal getTasa() {
         return tasa;
     }
@@ -78,5 +101,29 @@ public abstract class Prestamo implements ImprimirDatos{
 //        
 //    };   
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public Boolean cancelarCuotas(int cantidadACancelar) {
+        int diferenciaDeCuotas = cantidadCuotas - cantidadACancelar;
+        // Verifico que sea posible cancelar dicha cantidad de cuotas
+        if (diferenciaDeCuotas >= 0) {
+            // Setteo la cantidadDeCuotas a la cantidad de cuotas restantes
+            setCantidadCuotas(diferenciaDeCuotas);
+            return true;
+        } else {
+            cancelarCuotas(cantidadACancelar - 1); //recursivo!!
+        }
+        return false;
+    }
+
+    // Función para cancelar préstamos
+    public void cancelarPrestamo() {
+        this.estado = "CANCELADO";
+    }
    
 }
