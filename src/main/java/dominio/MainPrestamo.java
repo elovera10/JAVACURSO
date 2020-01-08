@@ -29,6 +29,8 @@ public class MainPrestamo {
         
         BigDecimal elMonto2 = new BigDecimal("1000.10");
         BigDecimal elMonto3 = new BigDecimal("10000.00");
+        BigDecimal elMonto4 = new BigDecimal("15100.00");
+        BigDecimal elMonto5 = new BigDecimal("13300.00");        
         BigDecimal ingresos = new BigDecimal("55000");
         //miSegundoPrestamo.setMonto(elMonto2); 
         //Prestamo miSegundoPrestamo = new Prestamo(bancoSaenz,elMonto2, 12);        
@@ -43,16 +45,24 @@ public class MainPrestamo {
         PrestamoPersonal prestPersonal = new PrestamoPersonal (bancoSaenz, elMonto2, 18,"SIT6");
         prestPersonal.setSituacionVeraz("AA");
         PrestamoPersonal prestPersonal2 = new PrestamoPersonal (bancoSaenz, elMonto3, 24,"SIT3");
-        prestPersonal2.setSituacionVeraz("A2");
+        prestPersonal2.setSituacionVeraz("A2");        
+        PrestamoPersonal prestPersonal3 = new PrestamoPersonal (bancoSaenz, elMonto4, 24,"SIT1");
+        prestPersonal3.setSituacionVeraz("A4");
+        PrestamoPersonal prestPersonal4 = new PrestamoPersonal (bancoSaenz, elMonto5, 24,"SIT2");
+        prestPersonal4.setSituacionVeraz("A1");
         
-        prestPersonal.setFechaAcreditacion(LocalDate.of(2019,03, 21));
+        prestPersonal.setFechaAcreditacion(LocalDate.of(2020,03, 21));
         prestPersonal.setFechaAdjudicacion(LocalDate.of(2019, 03, 15));        
-        prestPersonal2.setFechaAcreditacion(LocalDate.of(2019,12, 21));
+        prestPersonal2.setFechaAcreditacion(LocalDate.of(2020,01, 21));
         prestPersonal2.setFechaAdjudicacion(LocalDate.of(2019, 10, 15));
+        prestPersonal3.setFechaAdjudicacion(LocalDate.of(2019, 10, 15));
+        prestPersonal3.setFechaAcreditacion(LocalDate.of(2019,12, 31));
+        prestPersonal4.setFechaAcreditacion(LocalDate.of(2019,12, 20));
+        prestPersonal4.setFechaAdjudicacion(LocalDate.of(2019, 12, 20));
         prestamoHipotecario.setFechaAcreditacion(LocalDate.of(2019,8, 21));
         prestamoHipotecario.setFechaAdjudicacion(LocalDate.of(2019,8, 15));
         
-        Prestamo [] prestamosDelCliente = {prestamoHipotecario,prestPersonal,prestPersonal2};
+        Prestamo [] prestamosDelCliente = {prestamoHipotecario,prestPersonal,prestPersonal2,prestPersonal3,prestPersonal4};
         cliente.setPrestamos(prestamosDelCliente);
         //cliente.setPrestamos(prestamosDelCliente); //asignacion de prestamos al cliente
         //cliente.getPrestamos()[2] = miTercerPrestamo; obtengo y agrego otro
