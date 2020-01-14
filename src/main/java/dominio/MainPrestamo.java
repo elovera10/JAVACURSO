@@ -2,14 +2,18 @@ package dominio;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
 
-public class MainPrestamo {
-
-    
+public class MainPrestamo {  
     
     @SuppressWarnings("empty-statement")
+    
     public static void main(String[] parametros) {
         System.out.println("Hola mundo!");
+        SpringApplication.run(MainPrestamo.class , parametros);
+
         //Prestamo miPrestamo = new Prestamo(elMonto,);
         //miPrestamo.setCantidadCuotas(6);
         //Banco bancoSaenz = Banco.obtenerBanco("Saenz");
@@ -36,7 +40,7 @@ public class MainPrestamo {
         //Prestamo miSegundoPrestamo = new Prestamo(bancoSaenz,elMonto2, 12);        
         //uso de constructor de Cliente
         //como no hay setter del nombre, una vez que lo creo no lo puedo cambiar
-        Cliente cliente = new Cliente ("José Perez"); 
+        Cliente cliente = new Cliente ("JosÃ© Perez"); 
         //cliente.setDni("11223564");
         cliente.setIngresos(ingresos);
         PrestamoHipotecario prestamoHipotecario = new PrestamoHipotecario(bancoSaenz, elMonto, 30,"Auto");

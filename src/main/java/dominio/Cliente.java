@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 /**
  *
@@ -43,9 +44,12 @@ public class Cliente implements ImprimirDatos{
         listPrest.sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
         listPrest
                 .stream()
+                .filter(pres -> pres.getFechaAcreditacion() != null)
                 .filter(pres -> pres.getFechaAcreditacion().isBefore(LocalDate.now()))
-                .forEach(pres2 -> pres2.imprimirDatos() );
+                .collect(Collectors.toList());
+                //.forEach(pres2 -> pres2.imprimirDatos() );
         System.out.println(LocalDate.now());
+        
         //for (Prestamo prestamo : prestamos) {        
 //        for (Prestamo prestamo : listPrest) {            
 //            prestamo.imprimirDatos();
