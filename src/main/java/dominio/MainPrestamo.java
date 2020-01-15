@@ -11,8 +11,10 @@ public class MainPrestamo {
     @SuppressWarnings("empty-statement")
     
     public static void main(String[] parametros) {
-        System.out.println("Hola mundo!");
-        SpringApplication.run(MainPrestamo.class , parametros);
+        
+        SpringApplication.run(MainPrestamo.class , parametros);        
+        
+        System.out.println("Hola mundo!");        
 
         //Prestamo miPrestamo = new Prestamo(elMonto,);
         //miPrestamo.setCantidadCuotas(6);
