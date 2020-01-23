@@ -1,5 +1,10 @@
-package dominio;
 
+
+import dominio.Banco;
+import dominio.Cliente;
+import dominio.Prestamo;
+import dominio.PrestamoHipotecario;
+import dominio.PrestamoPersonal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import org.springframework.boot.SpringApplication;
