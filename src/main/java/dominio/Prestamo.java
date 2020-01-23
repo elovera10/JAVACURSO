@@ -4,8 +4,10 @@ import static dominio.ImprimirDatos.COLORDEFAULT;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+//clase abstracta, no instanciable
 public abstract class Prestamo implements ImprimirDatos{
     private Banco banco;
+    private Integer numero;
     private BigDecimal monto; 
     private int cantidadCuotas;
     private BigDecimal tasa;
@@ -14,6 +16,38 @@ public abstract class Prestamo implements ImprimirDatos{
     private LocalDate fechaAdjudicacion;
     private LocalDate fechaAcreditacion;
 
+    // Constructor default
+    public Prestamo(Banco banco, BigDecimal monto, int cantidadCuotas) {
+        this.banco = banco;
+        this.monto = monto;
+        this.cantidadCuotas = cantidadCuotas;
+        this.estado = "ACTIVO";
+    }
+    
+    //método que sobreescribe el toString() default
+    public String toString(){
+        return "Monto: " + this.monto
+                + " // cantidad de cuotas: " + this.cantidadCuotas;    
+    
+    }
+    
+    // Implementación del método imprimirDatos() declarado en la interfaz ImprimirDatos
+    @Override
+    public void imprimirDatos() {
+        System.out.println("Impresión Prestamo: "
+                + "monto del préstamo = " + monto
+                + ", cantidad de cuotas = " + cantidadCuotas
+                + ". Color de impresión: " + COLORDEFAULT
+                + ", Fecha Acreditacion: " + fechaAcreditacion);
+    };
+    
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
     public LocalDate getFechaAdjudicacion() {
         return fechaAdjudicacion;
     }
@@ -31,12 +65,8 @@ public abstract class Prestamo implements ImprimirDatos{
     }
 
    
-    @Override
-    public String toString(){
-        return "Monto: " + this.monto
-                + " // cantidad de cuotas: " + this.cantidadCuotas;    
     
-    }
+    
 
 //    public Prestamo(BigDecimal montoN) {
 //        System.out.println("MONTO NUEVO: " + montoN);
@@ -44,20 +74,10 @@ public abstract class Prestamo implements ImprimirDatos{
 //    }
 //    public Prestamo(){
 //    }
-    public Prestamo(Banco banco, BigDecimal monto, int cantidadCuotas) {
-        this.banco = banco;
-        this.monto = monto;
-        this.cantidadCuotas = cantidadCuotas;
-    }
+    
     //Prestamo p1 = new Prestamo(BigDecimal monto, int cantidadCuotas);
      // Implementación del método imprimirDatos() declarado en la interfaz ImprimirDatos
-    public void imprimirDatos() {
-        System.out.println("Impresión Prestamo: "
-                + "monto del préstamo = " + monto
-                + ", cantidad de cuotas = " + cantidadCuotas
-                + ". Color de impresión: " + COLORDEFAULT
-                + ", Fecha Acreditacion: " + fechaAcreditacion);
-    };
+    
     public BigDecimal getMonto() {
         //public int getMonto() {
         return monto;

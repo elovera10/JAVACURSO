@@ -41,31 +41,34 @@ public class Cliente implements ImprimirDatos{
                 + "DNI = " + dni + ", ingresos = " + ingresos
                 + ". Color de impresión: " + COLORSECUNDARIO);
         List <Prestamo> listPrest = Arrays.asList(prestamos);
-        listPrest.sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
-        listPrest
-                .stream()
+        List<Prestamo> listaFiltrada = listPrest.stream()
+        //listPrest.sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
+        //listPrest
+                //.stream()
                 .filter(pres -> pres.getFechaAcreditacion() != null)
-                .filter(pres -> pres.getFechaAcreditacion().isBefore(LocalDate.now()))
+                .filter(i -> i.getFechaAcreditacion().isBefore(LocalDate.now()))
                 .collect(Collectors.toList());
                 //.forEach(pres2 -> pres2.imprimirDatos() );
-        System.out.println(LocalDate.now());
+        //System.out.println(LocalDate.now());
+        listaFiltrada
+                .sort(Comparator.comparing(Prestamo::getFechaAcreditacion));
         
-        //for (Prestamo prestamo : prestamos) {        
+        for (Prestamo prestamo : listaFiltrada) {        
 //        for (Prestamo prestamo : listPrest) {            
-//            prestamo.imprimirDatos();
-//        }
+            prestamo.imprimirDatos();
+        }
 //        listPrest
 //                .stream()
 //                .filter(pres -> pres.getFechaAcreditacion().isBefore(LocalDate.now()));
 
     }
-    public void cambiarDomicilio (Domicilio newDomicilio){
+    /*public void cambiarDomicilio (Domicilio newDomicilio){
         
     }
     
     public void actualizarIngresos(DocumentoDigital recibo,BigDecimal monto){
     
-    }
+    }*/
 //    public String getNombreApellido() {
 //        return nombreApellido;
 //    }
@@ -114,12 +117,12 @@ public class Cliente implements ImprimirDatos{
         this.dni = dni;
     }
 
-    public String getNombreApellido() {
+    /*public String getNombreApellido() {
         return nombreApellido;
     }
 
     public void setNombreApellido(String nombreApellido) {
         this.nombreApellido = nombreApellido;
-    }
+    }*/
     
 }

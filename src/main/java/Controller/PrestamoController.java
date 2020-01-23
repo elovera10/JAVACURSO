@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import static java.util.Arrays.asList;
 import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,5 +50,18 @@ public class PrestamoController {
 
         Prestamo [] prestamosDelCliente = {prestamoHipotecario,prestPersonal,prestPersonal2,prestPersonal3,prestPersonal4};
         return asList(prestamosDelCliente);
+    }
+    @RequestMapping(method = GET, path = "/apirest/prestamos/{numero}")
+    public Prestamo obtenerPrestamoPorNumero(@PathVariable Integer numero) {
+
+        Banco bancoSaenz = Banco.obtenerBanco();
+
+        BigDecimal elMonto = new BigDecimal("1550.25");
+        Prestamo prestPersonal = new PrestamoPersonal(bancoSaenz, elMonto, 6, "SIT6");
+        prestPersonal.setFechaAcreditacion(LocalDate.of(2019, 10, 20));
+
+        prestPersonal.setNumero(numero);
+        
+        return prestPersonal;
     }
 }
