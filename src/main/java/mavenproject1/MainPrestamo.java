@@ -1,10 +1,12 @@
+package mavenproject1;
 
 
-import dominio.Banco;
-import dominio.Cliente;
-import dominio.Prestamo;
-import dominio.PrestamoHipotecario;
-import dominio.PrestamoPersonal;
+
+import mavenproject1.dominio.Banco;
+import mavenproject1.dominio.Cliente;
+import mavenproject1.dominio.Prestamo;
+import mavenproject1.dominio.PrestamoHipotecario;
+import mavenproject1.dominio.PrestamoPersonal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import org.springframework.boot.SpringApplication;

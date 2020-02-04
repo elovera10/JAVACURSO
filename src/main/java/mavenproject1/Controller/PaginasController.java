@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package mavenproject1.Controller;
 
-import dominio.Banco;
-import dominio.Prestamo;
-import dominio.PrestamoHipotecario;
-import dominio.PrestamoPersonal;
+import mavenproject1.dominio.Banco;
+import mavenproject1.dominio.Prestamo;
+import mavenproject1.dominio.PrestamoHipotecario;
+import mavenproject1.dominio.PrestamoPersonal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import static java.util.Arrays.asList;

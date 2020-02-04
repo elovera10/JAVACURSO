@@ -1,6 +1,6 @@
-package dominio;
+package mavenproject1.dominio;
 
-import static dominio.ImprimirDatos.COLORDEFAULT;
+import static mavenproject1.dominio.ImprimirDatos.COLORDEFAULT;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

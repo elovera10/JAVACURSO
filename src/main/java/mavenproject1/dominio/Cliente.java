@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dominio;
+package mavenproject1.dominio;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
